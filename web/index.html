@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StudyBuddy MCP — Your AI Study Companion</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-icon">✦</span><div><strong>StudyBuddy</strong><small>Powered by MCP</small></div></div>
+    <span class="status"><i></i> Local demo</span>
+  </header>
+  <main class="layout">
+    <section class="hero">
+      <p class="eyebrow">YOUR PERSONAL STUDY SPACE</p>
+      <h1>Study smarter.<br><span>Feel prepared.</span></h1>
+      <p class="hero-copy">Save your notes, practise what you know, and make a plan for exam day.</p>
+      <div class="hero-pills"><span>✎ Notes</span><span>✧ Practice quiz</span><span>◷ Revision plan</span></div>
+    </section>
+    <section class="grid">
+      <article class="panel">
+        <div class="panel-heading"><span class="icon purple">✎</span><div><h2>Save study notes</h2><p>Keep useful information by topic.</p></div></div>
+        <form id="note-form">
+          <label for="note-topic">Topic</label><input id="note-topic" required placeholder="e.g. Operating Systems">
+          <label for="note-text">Your notes</label><textarea id="note-text" required rows="4" placeholder="A process is a program in execution..."></textarea>
+          <button type="submit">Save note <span>↗</span></button>
+        </form>
+        <div id="note-result" class="result" aria-live="polite"></div>
+      </article>
+      <article class="panel">
+        <div class="panel-heading"><span class="icon blue">✧</span><div><h2>Quiz me</h2><p>Turn your saved notes into practice prompts.</p></div></div>
+        <form id="quiz-form">
+          <label for="quiz-topic">Topic</label><input id="quiz-topic" required placeholder="e.g. Operating Systems">
+          <label for="question-count">Number of questions</label>
+          <select id="question-count"><option>3</option><option selected>5</option><option>8</option><option>10</option></select>
+          <button type="submit" class="blue-button">Generate quiz <span>↗</span></button>
+        </form>
+        <div id="quiz-result" class="result" aria-live="polite"></div>
+      </article>
+      <article class="panel plan-panel">
+        <div class="panel-heading"><span class="icon orange">◷</span><div><h2>Revision planner</h2><p>Make a simple daily schedule.</p></div></div>
+        <form id="plan-form">
+          <label for="exam-date">Exam date</label><input id="exam-date" type="date" required>
+          <label for="plan-topics">Topics (separate with commas)</label><input id="plan-topics" required placeholder="Python, Machine Learning, OS">
+          <button type="submit" class="orange-button">Build my plan <span>↗</span></button>
+        </form>
+        <div id="plan-result" class="result" aria-live="polite"></div>
+      </article>
+      <article class="panel topics-panel">
+        <div class="panel-heading"><span class="icon green">▤</span><div><h2>View notes & topics</h2><p>Review saved notes and browse subjects.</p></div></div>
+        <button id="refresh-topics" class="secondary-button" type="button">↻ Refresh topics</button>
+        <div id="topics-chips" class="topic-chips"></div>
+        <form id="view-notes-form">
+          <label for="view-topic">Topic to view</label>
+          <input id="view-topic" required placeholder="e.g. Operating Systems">
+          <button type="submit" class="green-button">View notes <span>↗</span></button>
+        </form>
+        <div id="view-notes-result" class="result" aria-live="polite"></div>
+      </article>
+    </section>
+    <footer>StudyBuddy MCP · Notes stay in your local SQLite database · AI integration can be added next</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

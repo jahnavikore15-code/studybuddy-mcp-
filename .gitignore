@@ -1,0 +1,7 @@
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.env
+studybuddy.db
+.DS_Store
